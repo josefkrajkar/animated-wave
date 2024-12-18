@@ -1,0 +1,84 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  --curve-color: #66ccff;
+  --curve-color-light: #99e6ff;
+  --curve-color-b: #66ff8f;
+  --curve-color-b-light: #99ffbe;
+  --curve-color-c: #ff6666;
+  --curve-color-c-light: #ff9999;
+}
+
+svg {
+  overflow: visible;
+}
+
+.glow-curve {
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+}
+
+@keyframes glow-pulse-a {
+  0%, 100% {
+      stroke: var(--curve-color);
+      filter: drop-shadow(0 0 6px var(--curve-color));
+  }
+  50% {
+      stroke: var(--curve-color-light);
+      filter: drop-shadow(0 0 12px var(--curve-color-light));
+  }
+}
+
+@keyframes glow-pulse-b {
+  0%, 100% {
+      stroke: var(--curve-color-b);
+      filter: drop-shadow(0 0 6px var(--curve-color-b));
+  }
+  50% {
+      stroke: var(--curve-color-b-light);
+      filter: drop-shadow(0 0 12px var(--curve-color-b-light));
+  }
+}
+
+@keyframes glow-pulse-c {
+  0%, 100% {
+      stroke: var(--curve-color-c);
+      filter: drop-shadow(0 0 6px var(--curve-color-c));
+  }
+  50% {
+      stroke: var(--curve-color-c-light);
+      filter: drop-shadow(0 0 12px var(--curve-color-c-light));
+  }
+}
+
+.a-curve {
+  stroke: var(--curve-color); /* Base color of the glow */
+  filter: drop-shadow(0 0 6px var(--curve-color));
+  animation: glow-pulse-a 2s infinite ease-in-out;
+}
+
+.b-curve {
+  stroke: var(--curve-color-b); /* Base color of the glow */
+  filter: drop-shadow(0 0 6px var(--curve-color-b));
+  animation: glow-pulse-b 2s infinite ease-in-out;
+}
+
+.c-curve {
+  stroke: var(--curve-color-c); /* Base color of the glow */
+  filter: drop-shadow(0 0 6px var(--curve-color-c));
+  animation: glow-pulse-c 2s infinite ease-in-out;
+}
+
+.wrapper {
+  position: relative;
+  width: 800px;
+  height: 200px;
+  text-align: left;
+}
+
+.curve {
+  position: absolute;
+}
