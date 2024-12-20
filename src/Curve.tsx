@@ -61,7 +61,7 @@ function Curve ({className, index}: {className?: string, index: string}) {
 
     return (
         <svg width="800" height="200" className={className}>
-            <path ref={curveRef} className={`glow-curve ${index}-curve`} d="M0 0 C 50 150, 350 150, 350 150"></path>
+            <path ref={curveRef} className={`glow-curve ${index}-curve`} d="M0 100 C 0 100, 0 100, 800 100"></path>
         </svg>
     )
 };
